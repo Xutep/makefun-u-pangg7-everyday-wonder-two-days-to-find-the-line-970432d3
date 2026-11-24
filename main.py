@@ -18,6 +18,7 @@ SENTENCE = (
 def main() -> None:
     sentence = SENTENCE.strip()
     assert 1 <= len(sentence) <= 200, "sentence must be 1-200 characters"
+    assert "\n" not in sentence, "entry must be a single line"
     assert sentence.count(".") == 1, "entry must be a single sentence"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
